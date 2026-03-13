@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onfocus</title>
+    <style>
+        /* Optional styles for better visibility */
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <p>Enter text:</p>
+    <input type="text" id="textbox" onfocus="change(0)" onblur="change(1)">
+
+    <script>
+        function change(state) {
+            const textbox = document.getElementById("textbox");
+            if (state === 0) {
+                textbox.style.backgroundColor = "yellow";
+                textbox.style.color = "blue";
+            } else {
+                textbox.style.backgroundColor = "red";
+                textbox.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

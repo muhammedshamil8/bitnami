@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+       <title>Triangle</title>
+</head>
+<body>
+    <input type="button" value="Find" onclick="triangle()">
+    <script>
+        function triangle() {
+            let s1 = parseInt(prompt("Enter the first side"));
+            let s2 = parseInt(prompt("Enter the second side"));
+            let s3 = parseInt(prompt("Enter the third side"));
+
+            // Check if the sides can form a triangle
+            if (s1 + s2 <= s3 || s2 + s3 <= s1 || s1 + s3 <= s2) {
+                alert("You cannot make a triangle using these sides");
+            } else {
+             
+                if (s1 === s2 && s2 === s3) {
+                    alert("It is an equilateral triangle");
+                } else if (s1 === s2 || s1 === s3 || s2 === s3) {
+                    alert("It is an isosceles triangle");
+                } else {
+                    alert("It is a scalene triangle");
+                }
+
+                
+                let s = (s1 + s2 + s3) / 2;
+                let area = Math.sqrt(s * (s - s1) * (s - s2) * (s - s3));
+                alert("Area = " + area);
+            }
+        }
+    </script>
+</body>
+</html>

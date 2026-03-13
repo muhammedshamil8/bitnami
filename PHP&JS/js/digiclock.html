@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clock Display</title>
+    <script type="text/javascript">
+        function startTime() {
+            var today = new Date(); // Fixed: Capitalized 'Date'
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            document.getElementById("txt").innerHTML = h + ":" + m + ":" + s; // Fixed: Corrected the variable names and string concatenation
+            setTimeout(startTime, 1000); // Fixed: Changed 't.getTimeout' to 'setTimeout' and adjusted delay to 1000 ms
+        }
+    </script>
+</head>
+<body>
+    <div id="txt">
+        <input type="button" value="Click to display the clock..." onclick="startTime()" /> <!-- Fixed: Corrected the closing of the button -->
+    </div>
+</body>
+</html>
+

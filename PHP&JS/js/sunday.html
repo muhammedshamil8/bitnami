@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>First January as Sunday Finder</title>
+</head>
+<body>
+<h1>First January as Sunday Finder</h1>
+
+<label for="startyear">Start Year:</label>
+<input type="number" id="startyear" placeholder="Enter start year">
+
+<label for="endyear">End Year:</label>
+<input type="number" id="endyear" placeholder="Enter end year">
+
+<button onclick="findFirstSunday()">Find First Sunday</button>
+
+<p id="result"></p>
+
+<script>
+function findFirstSunday() {
+    // Get the values from the input fields
+    const startYear = parseInt(document.getElementById("startyear").value);
+    const endYear = parseInt(document.getElementById("endyear").value);
+    
+    const resultElement = document.getElementById("result");
+
+    // Validate input values
+    if (isNaN(startYear) || isNaN(endYear) || startYear > endYear) {
+        resultElement.innerHTML = "Invalid input. Please check the years.";
+        return;
+    }
+
+    let yearsWithSunday = [];
+
+    // Loop through the years in the range
+    for (let year = startYear; year <= endYear; year++) {
+        // Create a new Date object for January 1st of the current year
+        const firstJanuary = new Date(year, 0, 1);
+        
+        // Check if January 1st is a Sunday (0 represents Sunday)
+        if (firstJanuary.getDay() === 0) {
+            yearsWithSunday.push(year);
+        }
+    }
+
+    // Display the result
+    if (yearsWithSunday.length > 0) {
+        resultElement.innerHTML = "Years with 1st January as Sunday:<br>" + yearsWithSunday.join('<br>');
+    } else {
+        resultElement.innerHTML = "No 1st January fell on a Sunday in the given range.";
+    }
+}
+</script>
+
+</body>
+</html>

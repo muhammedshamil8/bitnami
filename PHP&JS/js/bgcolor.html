@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <script language="javascript">
+        function changecolor(c) {
+            // Use array literal instead of 'new array()'
+            var clr = ["blue", "red", "green", "yellow", "pink"];
+            // Convert input to an integer
+            var index = parseInt(c);
+            // Check if index is valid
+            if (index >= 0 && index < clr.length) {
+                document.body.style.backgroundColor = clr[index]; // Use body.style.backgroundColor
+            } else {
+                alert("Invalid index! Please enter a number between 0 and 4.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="frm">
+        Enter the matching index to change the background color:
+        <input type="text" name="input">
+        <input type="button" value="Click Here" onclick="changecolor(frm.input.value);"><br><br>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>0</td><td>blue</td></tr>
+            <tr><td>1</td><td>red</td></tr>
+            <tr><td>2</td><td>green</td></tr>
+            <tr><td>3</td><td>yellow</td></tr>
+            <tr><td>4</td><td>pink</td></tr>
+        </tbody>
+    </table>
+</body>
+</html>
+

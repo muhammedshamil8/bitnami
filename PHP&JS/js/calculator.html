@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a, b, c; // Declare variables
+        function r(){
+            a = parseInt(document.f1.t1.value);
+            b = parseInt(document.f1.t2.value);
+        }
+        function add(){
+            r();
+            c = a + b; // Use c for the result
+            document.f1.disp.value = c; // Reference disp correctly
+        }
+        function sub(){
+            r();
+            c = a - b;
+            document.f1.disp.value = c;
+        }
+        function mul(){
+            r();
+            c = a * b;
+            document.f1.disp.value = c;
+        }
+        function div(){
+            r();
+            c = a / b;
+            document.f1.disp.value = c;
+        }
+    </script>
+    <form name="f1">
+        Enter first number
+        <input type="text" name="t1" ><br><br>
+        Enter second number   <input type="text" name="t2" ><br><br>
+        <output name="disp" for="f1"></output><br><br> <!-- Corrected output element -->
+        <input type="button" value="add" onclick="add();">
+        <input type="button" value="sub" onclick="sub();">
+        <input type="button" value="mul" onclick="mul();">
+        <input type="button" value="div" onclick="div();">
+    </form>
+</body>
+</html>
+
+

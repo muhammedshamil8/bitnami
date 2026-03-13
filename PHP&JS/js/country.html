@@ -1,0 +1,28 @@
+<html>
+<head>
+<script language="JavaScript">
+function capital() {
+       var capitals = ["New Delhi", "London", "Paris", "Berlin"];
+    
+    
+    var selectedIndex = document.getElementById("countries").selectedIndex;
+    
+       document.getElementById("textbox").value = capitals[selectedIndex];
+}
+</script>
+</head>
+<body>
+
+<h1>Country Capital</h1>
+
+<select id="countries" onchange="capital()">
+    <option value="1">India</option>
+    <option value="2">UK</option>
+    <option value="3">France</option>
+    <option value="4">Germany</option>
+</select><br>
+<h1>Capital: <input type="text" id="textbox">
+
+
+</body>
+</html>
